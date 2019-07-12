@@ -178,7 +178,7 @@ def entry_add(request):
         # 如果提交成功就发送邮件
         if s.save:
             send_mail('新入职信息', '您好！新同事入职！请分配电脑！【员工:{}  部门:{}  职位:{}】 '.format(name1, email_if(int(name4)), name5),
-                      'sohan_computer@hotmail.com', ['wenlu.han@sohan.hk'], fail_silently=False)
+                      'sohan_computer@hotmail.com', ['xx@163.com'], fail_silently=False)
 
         return redirect('entry')
 

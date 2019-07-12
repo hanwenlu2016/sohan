@@ -124,10 +124,10 @@ STATICFILES_DIRS = [
 # 邮件配置
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.office365.com'  # SMTP地址 例如: smtp.163.com
-EMAIL_PORT = 587  # SMTP端口 例如: 25
-EMAIL_HOST_USER = 'sohan_computer@hotmail.com'  # qq的邮箱 例如: xxxxxx@163.com
-EMAIL_HOST_PASSWORD = 'sy666.com'  # 我的邮箱密码 例如  xxxxxxxxx
+EMAIL_HOST = 'smtp.163.com'  # SMTP地址 例如: smtp.163.com
+EMAIL_PORT = 25  # SMTP端口 例如: 25
+EMAIL_HOST_USER = 'xxx163.com'  # qq的邮箱 例如: xxxxxx@163.com
+EMAIL_HOST_PASSWORD = 'xxx163.com'  # 我的邮箱密码 例如  xxxxxxxxx
 EMAIL_USE_TLS = True  # 与SMTP服务器通信时，是否启动TLS链接(安全链接)。默认是false
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
