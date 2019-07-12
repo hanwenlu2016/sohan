@@ -21,9 +21,9 @@ pip3 install -r requirements.txt    -i https://pypi.douban.com/simple  #豆瓣�
 ##################################################################
 以下是效果图
 
-![登录](https://github.com/hanwenlu2016/sohan/blob/master/mdgimgs/0.png)
-
 ![登录](https://github.com/hanwenlu2016/sohan/blob/master/mdgimgs/1.png)
+
+![登录](https://github.com/hanwenlu2016/sohan/blob/master/mdgimgs/0.png)
 
 ![登录](https://github.com/hanwenlu2016/sohan/blob/master/mdgimgs/2.png)
 
