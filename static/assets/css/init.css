@@ -1,0 +1,49 @@
+html{
+    font-size:20px;
+}
+*{
+    box-sizing: border-box;
+    -webkit-appearance: none; 
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    box-sizing: border-box;
+}
+body,p,ul,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,div,input,button{
+    margin: 0;
+    padding: 0;
+    font-family: Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+    font-size: 0.6rem;
+}
+img{
+    border: 0 none;
+}
+input,button{
+    border: 0 none;
+    outline-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style: none;
+}
+input,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+    appearance: none;
+    -webkit-appearance: none;
+}
+.clearfix:after{
+     content: ".";
+     display: block;
+     clear: both;
+     height: 0;
+     line-height: 0;
+     visibility: hidden;
+ }
+.clearfix{
+    zoom: 1;
+}

@@ -1,0 +1,16 @@
+.ex_dateH1{
+    padding: 10px 0px;
+}
+.ex_dateWrap{
+    width: 30%;
+    height: 40px;
+    border:  1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.ex_dateWrap input{
+    width: 100%;
+    height: 100%;
+    padding: 0px 10px;
+
+}

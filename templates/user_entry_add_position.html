@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} <title>入职登记-职位增加</title>{% endblock %}
+{% block index %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="container">
+            <div class="row">
+                <div class="page-header ">
+                    <h3 class="page-header"><a class="fa fa-home" href="{% url 'index' %}"> 主页</a> >> <a
+                            class="fa fa-user-plus" href="{% url 'entry' %}"> 新入职 </a> >> <a class="fa fa-sign-in"
+                            href="{% url 'entry_add' %}"> 新入职登记</a> >> 职位增加
+                    </h3>
+
+{#                    <h2 class="page-header"><a href="{% url 'index' %}">电脑信息管理系统</a> >> <a#}
+{#                            href="{% url 'entry' %}"> 员工信息-入职登记 </a> >><a href="{% url 'entry_add' %}"> 新入职登记</a> >>#}
+{#                        增加职位#}
+{#                    </h2>#}
+                    <div class="col-md-6 col-md-offset-3">
+                        <br>
+                        <br>
+                        <br>
+                        <div class="panel panel-primary">
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title">职位增加</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form class="form-horizontal" action="{% url 'entry_add_position' %}"
+                                      method="post">    {% csrf_token %}
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label">职位名称</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" class="form-control" id="inputEmail3"
+                                                   name="name"
+                                                   placeholder="请输入增加的职位" value="">
+                                        </div>
+                                    </div>
+                                    <h5 style="color:red" align="right">{{ msg }}</h5>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <button type="submit" class="btn bg-primary fa fa-check-square"> 提交</button>
+                                            <a href="{% url 'entry_add' %}"
+                                               class="btn  btn-danger pull-right fa fa-reply-all"> 返回</a>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

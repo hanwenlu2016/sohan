@@ -1,0 +1,131 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block title %} <title>首页</title>{% endblock %}
+{% block index %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <!-- 面板开始 -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"> 电信信息管理 </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row table-toolbar">
+                    <div id="container" style="min-width:300px;height:320px"></div>
+                    <script>
+                        Highcharts.chart('container', {
+                            chart: {
+                                plotBackgroundColor: null,
+                                plotBorderWidth: null,
+                                plotShadow: false,
+                                type: 'pie'
+                            },
+                            title: {
+                                text: '部门电脑占比'
+                            },
+                            tooltip: {
+                                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                            },
+                            plotOptions: {
+                                pie: {
+                                    allowPointSelect: true,
+                                    cursor: 'pointer',
+                                    dataLabels: {
+                                        enabled: false
+                                    },
+                                    showInLegend: true
+                                }
+                            },
+                            series: [{
+                                name: 'Brands',
+                                colorByPoint: true,
+                                data: [{
+                                    name: '行政部',
+                                    y: {{ department_count1.count }},
+                                    sliced: true,
+                                    selected: true
+                                }, {
+                                    name: '产品部',
+                                    y: {{ department_count2.count  }}
+                                }, {
+                                    name: '运营商业务部',
+                                    y: {{ department_count3.count }}
+                                }, {
+                                    name: '充值业务部',
+                                    y: {{ department_count4.count }}
+                                }, {
+                                    name: '财务部',
+                                    y: {{ department_count5.count }}
+                                }, {
+                                    name: '智能饮水业务部',
+                                    y: {{ department_count6.count }}
+                                },
+                                ]
+                            }]
+                        });
+                    </script>
+                </div>
+                <hr>
+                <div id="container1" style="min-width:400px;height:400px"></div>
+                <script>
+                    var chart = Highcharts.chart('container1', {
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: '电脑品牌总数记录'
+                        },
+                        subtitle: {
+                            text: '数据截止目前'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45  // 设置轴标签旋转角度
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: ''
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: '电脑: <b>{point.y:.0f}台</b>'
+                        },
+                        series: [{
+                            name: '总占比',
+                            data: [
+                                ['ThinkPad_x1', {{ ThinkPad_x1 }}],
+                                ['ThinkPad_x1', {{ ThinkPad_x1 }}],
+                                ['ThinkPad_430', {{ ThinkPad_430 }}],
+                                ['ThinkPad_t440p', {{ ThinkPad_t440p }}],
+                                ['ThinkPad_430s', {{ ThinkPad_430s }}],
+                                ['ThinkPad_x220', {{ ThinkPad_x220 }}],
+                                ['ThinkPad_e430', {{ ThinkPad_e430 }}],
+                                ['ThinkPad_e430c', {{ ThinkPad_e430c }}],
+                                ['dell_x1', {{ dell_x1 }}],
+                                ['ThinkPad_e550', {{ ThinkPad_e550 }}],
+                                ['k29', {{ k29 }}],
+                                ['imac', {{ imac }}],
+                                ['总数', {{ cmp_num }}],
+
+                            ],
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y:.0f}', // :.1f 为保留 1 位小数
+                                y: 10
+                            }
+                        }]
+                    });
+                </script>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

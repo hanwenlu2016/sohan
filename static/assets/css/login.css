@@ -1,0 +1,188 @@
+.lg_banner{
+    /*background: #4877e6 url("../images/login_banner.jpg") no-repeat center;*/
+    background-size: contain;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+.lg_banner_txt{
+    width: 500px;
+    margin: 0 auto;
+    text-align: justify;
+    text-align-last: justify;
+    -moz-text-align-last: right;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
+    top: 50%;
+    margin-top: -40px;
+}
+.lg_banner_p1{
+    font-weight: 800;
+    color: #fff;
+    font-size: 40px;
+}
+.lg_banner_p2{
+    font-weight: 800;
+    color: #fff;
+    font-size: 20px;
+}
+.lg_login{
+    width: 400px;
+    margin: 0 auto;
+    height: 300px;
+    margin-top: 60px;
+}
+.lg_login_user , .lg_login_pw{
+    height: 40px;
+}
+.lg_login_pw{
+    margin-top: 30px;
+}
+.lg_login_user_label , .lg_login_pw_label{
+    width: 44px;
+    height: 44px;
+    background-color: #4877e6;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+.lg_login_user_label::before , .lg_login_pw_label::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    width: 26px;
+    height: 26px;
+    background: #4877e6 url("../images/login_user.png") no-repeat center;
+}
+.lg_login_pw_label::before{
+    background: #4877e6 url("../images/login_password.png") no-repeat center;
+}
+.lg_login_user_input , .lg_login_pw_input{
+    height: 44px;
+    width: 356px;
+    border: 1px solid #cfcfcf;
+    border-left: none;
+    vertical-align: top;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.lg_login_code{
+    height: 44px;
+    margin-top: 30px;
+}
+.lg_login_code_input{
+    width: 190px;
+    height: 44px;
+    border: 1px solid #cfcfcf;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 16px;
+    vertical-align: top;
+    margin-right: 20px;
+}
+.lg_login_code_img{
+    display: inline-block;
+    width: 80px;
+    height: 44px;
+   
+    background-size: contain;
+    vertical-align: top;
+}
+.lg_login_code_txt{
+    width: 90px;
+    display: inline-block;
+    vertical-align: top;
+    height: 44px;
+    margin-left: 10px;
+    line-height: 44px;
+    color: #666;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.lg_login_code_txt_svg{
+    display: inline-block;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    line-height: 20px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+}
+.lg_login_btn{
+    height: 44px;
+    margin-top: 30px;
+}
+.lg_login_btn_lg,.lg_login_btn_set{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    line-height: 44px;
+    width: 195px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.lg_login_btn_lg{
+    background-color: #4877e6;
+    color: #fff;
+}
+.lg_login_btn_set{
+    background-color: #e8e8e8;
+    margin-left: 10px;
+    color: #a9adb7;
+}
+.lg_login_rmPw{
+    height: 44px;
+    text-align: center;
+    color: #a9adb7;
+    font-size: 16px;
+    margin-top: 35px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

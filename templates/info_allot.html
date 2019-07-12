@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} <title>电脑信息-分配电脑</title>{% endblock %}
+{% block index %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="container">
+            <div class="row">
+                <div class="page-header ">
+
+                    <h3 class="page-header"><a class="fa fa-home" href="{% url 'index' %}"> 主页</a> >> <a
+                            class="fa fa-suitcase" href="{% url 'stock' %}"> 库存电脑 </a> >> 分配电脑
+                    </h3>
+
+
+                    <div class="col-md-6 col-md-offset-3">
+                        <br>
+                        <br>
+                        <br>
+                        <div class="panel panel-primary">
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title">分配电脑</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form class="form-horizontal" action="{% url 'info_add' %}?id={{ edit_info_id }}"
+                                      method="post">    {% csrf_token %}
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label"
+                                               style="color: red">可分配员工</label>
+                                        <div class="col-sm-9">
+
+                                            <select class="form-control" name="name1">
+                                                {% if info_data.count == 0 %}
+                                                    <option value="没有待分配人员">没有待分配人员</option>
+                                                {% else %}
+                                                    {% for foo in  info_data %}
+                                                        <option value="{{ foo.name }}">{{ foo.name }}</option>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label"
+                                               style="color: red">备注信息</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="inputEmail3" name="name2"
+                                                   placeholder="{{ info.tag }}" value="{{ info.tag }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+
+                                            <a href="{% url 'stock' %}"
+                                               class="btn  btn-danger pull-right fa fa-reply-all"> 返回</a>
+                                            <button type="submit" class="btn btn-success fa fa-check-square"> 提交
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">电脑型号</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputEmail3"
+                                               placeholder="电脑型号" value="{{ info.brands }}" readonly="true">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">硬盘组合</label>
+                                    <div class="col-sm-9">
+
+                                        <input type="text" class="form-control" id="inputEmail3"
+                                               placeholder="硬盘组合" value="{{ info.disks }}" readonly="true">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">内存大小</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputEmail3"
+                                               placeholder="内存大小" value="{{ info.memory }}" readonly="true">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">CPU</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputEmail3"
+                                               placeholder="CPU" value="{{ info.cpus }}" readonly="true">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">屏幕尺寸</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputEmail3"
+                                               placeholder="屏幕尺寸" value="{{ info.get_screen_size_display }}"
+                                               readonly="true">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">是否5G网卡</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputEmail3"
+                                               placeholder="是否5G网卡" value="{{ info.get_fiven_etwork_display }}"
+                                               readonly="true">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">mac地址</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputEmail3"
+                                               placeholder="mac地址" value="{{ info.mac }}" readonly="true">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">操作系统</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputEmail3"
+                                               placeholder="操作系统" value="{{ info.get_os_display }}" readonly="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

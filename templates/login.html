@@ -1,0 +1,74 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>管理平台</title>
+    <link rel="icon" href="{% static 'assets/images/sohan.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/init.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/login.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/c3Loading.css' %}"/>
+</head>
+<body>
+<!--banner图-->
+<div class="lg_banner" id="lg_banner">
+    <img src="{% static 'assets/images/login_bgc2.png' %}" alt="" style="width: 100%"/>
+    <div class="lg_banner_txt">
+        <p class="lg_banner_p1">电脑信息管理系统 </p>
+        <p class="lg_banner_p2">Computer information management system</p>
+    </div>
+</div>
+<!--登陆框-->
+<div class="lg_login">
+    <!--登陆-->
+    <div class="containerLogin">
+        <!--用户名-->
+        <form action="{% url 'login' %}" method="post">
+
+            <div class="lg_login_user {% if login_form.errors.username %}errorput{% endif %}">
+                <label class="lg_login_user_label" for="lg_user_input">
+                </label><input class="lg_login_user_input" required="required" name="username" id="lg_user_input" placeholder="请输入登陆账号"
+                               type="text"/>
+            </div>
+            <!--密码-->
+            <div class="lg_login_pw {% if login_form.errors.password %}errorput{% endif %}">
+                <label class="lg_login_pw_label" for="lg_pw_input">
+                </label><input class="lg_login_pw_input" required="required"  name="password" id="lg_pw_input" placeholder="请输入密码"
+                               type="password"/>
+            </div>
+            <div class="lg_login_btn">
+                <button class="lg_login_btn_lg" id="login" type="submit">
+                    登 录
+                </button><div class="lg_login_btn_set" id="reset">
+                    重置
+                </div>
+            </div>
+              {% csrf_token %}
+        </form>
+           <br>
+            <h4 style="color:red">{% for key,error in login_form.errors.items %}{% endfor %}{{ msg }}</h4>
+    </div>
+    <script src="{% static 'modules/incoming/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'modules/incoming/layerAll/layer.min.js' %}"></script>
+    <script src="{% static 'modules/ssui.js' %}"></script>
+    <script>
+      ss.imports(
+                [
+                    'c3Loading'
+                ]
+                ,
+                function(){
+                    var commonUrl = "";
+
+                    //登陆重置
+                    ss.getDom('#reset').addEventListener('click',function(){
+                        ss.getDom('#lg_user_input').value = '';
+                        ss.getDom('#lg_pw_input').value = '';
+                    });
+
+
+                })
+    </script>
+</div>
+</body>
+</html>

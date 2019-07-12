@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} <title>离职登记-查询</title>{% endblock %}
+{% block index %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+         <h3 class="page-header"><a class="fa fa-home" href="{% url 'index' %}"> 主页</a> >> <a
+                class="fa fa-user-times" href="{% url 'quit' %}"> 已离职 </a> >> 查询
+        </h3>
+        <!-- 面板开始 -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">离职登记-查询</h3>
+            </div>
+            <div class="panel-body">
+
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>部门</th>
+                        <th>职位</th>
+                        <th>手机号码</th>
+                        <th>职级</th>
+                        <th>离职时间</th>
+                        <th>备注</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for quit in quits %}
+                        <tr>
+                            {#      用数据ID  forloop.counter是循环自带  revcounter倒序 分页不可以用                       <td>{{ info.id }}</td>#}
+                            <td>{{ quit.name }}</td>
+                            <td>{{ quit.get_sex_display }}</td>
+                            <td>{{ quit.get_department_display }}</td>
+                            <td>{{ quit.positions }}</td>
+                            <td>{{ quit.phone }}</td>
+                            <td>{{ quit.get_rank_display }}</td>
+                            <td>{{ quit.com_time }}</td>
+                            <td>{{ quit.tag }}</td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+
+                <!--分页 开始-->
+                <div>
+                    <nav aria-label="Page navigation" class="pull-right">
+                        <ul class="pagination">
+                            {#                            {% if entrys.has_previous %}#}
+                            {#                                <li>#}
+                            {#                                    <a href="?page={{ entrys.previous_page_number }}" aria-label="Previous">#}
+                            {#                                        <span aria-hidden="true">&laquo;</span></a>#}
+                            {#                                </li>#}
+                            {#                            {% endif %}#}
+                            {##}
+                            {#                            {% for page in entrys.paginator.page_range %}#}
+                            {#                                {% if page == entrys.number %}#}
+                            {#                                    <li><a href="">{{ page }}</a></li>#}
+                            {#                                {% else %}#}
+                            {#                                    <li><a href="?page={{ page }}">{{ page }}</a></li>#}
+                            {#                                {% endif %}#}
+                            {#                            {% endfor %}#}
+                            {##}
+                            {#                            {% if entrys.has_next %}#}
+                            {#                                <li>#}
+                            {#                                    <a href="?page={{ entrys.next_page_number }}" aria-label="Next">#}
+                            {#                                        <span aria-hidden="true">&raquo;</span>#}
+                            {#                                    </a>#}
+                            {#                                </li>#}
+                            {#                            {% endif %}#}
+
+                        </ul>
+
+                    </nav>
+                </div>
+                <!--分页 结束-->
+            </div>
+        </div>
+        <!-- 面板 结束-->
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+/***
+ * uimaker
+ * http://www.uimaker.com
+ * e-mail: admin@uimaker.com/
+
+/*color*/
+a:hover{color:#3b3f4e;}
+.loginbox{background:#3b3f4e;}
+.userlogin li a{background:#3b3f4e;}
+.headtop{background:#3b3f4e;}
+.nav li a.selected{color:#3b3f4e;}
+.leftmenu li a.selected{color:#3b3f4e;}
+.menutab li.tabselected{border-top:solid 2px #3b3f4e;color:#3b3f4e;}
+.menutab li.tabselected a{color:#3b3f4e;}
+.tabbtn a:hover{color:#3b3f4e;}
+.toolbar li a.selected,.toolbar li a.selected:hover{background:#3b3f4e;border:solid 1px #3b3f4e;}
+.pagelist li a.selected,.pagelist li a.selected:hover{background:#3b3f4e;border:solid 1px #3b3f4e;}
+.layui-layer-btn .layui-layer-btn0{border-color:#3b3f4e;background-color:#3b3f4e;}
+.listbox i{color:#3b3f4e;}
+.simpletable a{color:#3b3f4e;}
+.textlist li span{background:#3b3f4e;}
+.formtable td a{color:#3b3f4e;}
+.btnsave{background:#3b3f4e;border:solid 1px #3b3f4e;}
+.btnstyle{background:#3b3f4e;border:solid 1px #3b3f4e;}
+.classify{border-left:solid 3px #3b3f4e;}
+.datetitle{border-left:solid 3px #3b3f4e;}
+.dateright li.current{background:#3b3f4e;border:solid 1px #3b3f4e;}
+.tab li.tabcurrent{border-top:solid 3px #3b3f4e;}
+.tab li.tabcurrent a{color:#3b3f4e;}
+.step li.stepcurrent{background:#3b3f4e;}
+.step li.stepcurrent span{color:#3b3f4e;}
+.nextlink{background:#3b3f4e;border:solid 1px #3b3f4e;}
+.select_ul li.cur{background:#3b3f4e;}
+

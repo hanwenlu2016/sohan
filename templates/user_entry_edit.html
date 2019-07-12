@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} <title>入职登记-编辑</title>{% endblock %}
+{% block index %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="container">
+            <div class="row">
+                <div class="page-header ">
+                    <h3 class="page-header"><a class="fa fa-home" href="{% url 'index' %}"> 主页</a> >> <a
+                            class="fa fa-user-plus" href="{% url 'entry' %}"> 新入职 </a> >> 编辑
+                    </h3>
+
+
+                    <div class="col-md-6 col-md-offset-3">
+                        <br>
+                        <br>
+                        <br>
+                        <div class="panel panel-primary">
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title">入职登记-编辑</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form class="form-horizontal" action="{% url 'edit_user_entry' %}?id={{ edit_user.id }}"
+                                      method="post">    {% csrf_token %}
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label">员工姓名</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" class="form-control" id="inputEmail3"
+                                                   name="name1"
+                                                   placeholder="请输入姓名" value="{{ edit_user.name }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label">性别</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="name2">
+                                                {% if edit_user.sex == '1' %}
+                                                    <option value="{{ edit_user.sex }}">{{ edit_user.get_sex_display }}</option>
+                                                    <option value="2">女</option>
+                                                {% elif edit_user.sex == '2' %}
+                                                    <option value="{{ edit_user.sex }}">{{ edit_user.get_sex_display }}</option>
+                                                    <option value="1">男</option>
+                                                {% endif %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label">手机号码</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" minlength="11" class="form-control"
+                                                   id="inputEmail3" name="name3"
+                                                   placeholder="请输入手机号" value="{{ edit_user.phone }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label">部门</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="name4">
+                                                {% if edit_user.department %}
+                                                    <option value="{{ edit_user.department }}">{{ edit_user.get_department_display }}</option>
+                                                    <option value="1">行政部</option>
+                                                    <option value="2">产品部</option>
+                                                    <option value="3">运营商业务部</option>
+                                                    <option value="4">充值业务部</option>
+                                                    <option value="5">财务部</option>
+                                                    <option value="6">智能饮水业务部</option>
+                                                {% endif %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label">职位</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="name5">
+                                                {% for foo  in p %}
+                                                    {# 如果当前循环到的 职位 和 用户的职位想等 #}
+                                                    {% if foo == edit_user.positions %}
+                                                        <option selected
+                                                                value="{{ foo.position_name }}">{{ foo.position_name }}</option>
+                                                    {% else %}
+                                                        <option value="{{ foo.position_name }}">{{ foo.position_name }}</option>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label">职级</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="name6">
+                                                {% if edit_user.rank %}
+                                                    <option value="{{ edit_user.rank }}">{{ edit_user.get_rank_display }}</option>
+                                                    <option value="1">P1B</option>
+                                                    <option value="2">P1A</option>
+                                                    <option value="3">P2B</option>
+                                                    <option value="4">P2A</option>
+                                                    <option value="5">P3B</option>
+                                                    <option value="6">P3A</option>
+                                                    <option value="7">P4B</option>
+                                                    <option value="8">P4A</option>
+                                                    <option value="9">P5B</option>
+                                                    <option value="10">P5A</option>
+                                                    <option value="11">P6B</option>
+                                                    <option value="12">P6A</option>
+                                                    <option value="null">null</option>
+                                                {% endif %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label">在职状态</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="name7">
+                                                {% if edit_user.user_state == '1' %}
+                                                    <option value="{{ edit_user.user_state }}">{{ edit_user.get_user_state_display }}</option>
+                                                    <option value="2">离职</option>
+                                                {% elif edit_user.user_state == '2' %}
+                                                    <option value="{{ edit_user.user_state }}">{{ edit_user.get_user_state_display }}</option>
+                                                    <option value="1">在职</option>
+                                                {% endif %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label">入职时间</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="inputEmail3" name="name8"
+                                                   placeholder="入职时间" value=" {{ edit_user.com_time }} ">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label">备注</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="inputEmail3" name="name9"
+                                                   placeholder="备注" value="{{ edit_user.tag }}">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <button type="submit" class="btn bg-primary fa fa-check-square"> 提交</button>
+                                            <a href="{% url 'entry' %}"
+                                               class="btn  btn-danger pull-right fa fa-reply-all"> 返回</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

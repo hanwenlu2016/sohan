@@ -1,0 +1,49 @@
+<div class="sh_home" id="dataCon">
+
+</div>
+<div class="sh_home3" id="dataCon3" style="display : none;position:fixed;
+        z-index: 1300;border-radius: 5px;overflow: hidden;
+        top:-9999px;background-color: #fff;border: 1px solid #ccc;
+        -moz-box-shadow: 8px 10px 5px #888888; 
+        box-shadow: 8px 10px 5px #888888;">
+		<form id="frm_ps" class="layui-form layui-form-pane" enctype="multipart/form-data">
+			<!--标题-->
+			<div style="height:45px;background-color: #296799;line-height: 45px;
+				padding-left: 20px;position:relative;">
+				<span style="font-size:16px;color:#fff;">上传录音</span>	
+				
+				<svg t="1529479385100" class="icon" id="closeSvg_1"
+					style="position: absolute;top:12px;right:20px;cursor: pointer;" viewBox="0 0 1024 1024" version="1.1"  width="22" height="22">
+					<path d="M152.931 869.372c-20.435-20.435-20.365-53.599 0-73.963l641.346-641.346c20.435-20.435 53.599-20.365 73.963 0 20.435 20.435 20.365 53.599 0 73.963l-641.346 641.346c-20.435 20.435-53.528 20.435-73.963 0z" fill="#ffffff" p-id="1958"></path><path d="M152.931 154.063c20.365-20.365 53.457-20.365 73.751-0.071l639.437 639.437c20.365 20.365 20.294 53.387-0.071 73.751s-53.457 20.365-73.751 0.071l-639.437-639.437c-20.365-20.365-20.294-53.387 0.071-73.751z" fill="#ffffff" p-id="1959">
+					</path>
+				</svg>
+			</div>
+			<!--隐藏域传值   uuid&&flowName -->
+			<input type="hidden" id="uuidWrap" name="uuid"/>
+			<input type="hidden" id="flowNameWrap" name="flowName"/>
+			<!--选择录音-->
+			<div class="wavWrap" style="text-align: center;margin-top:40px;">
+					<label for="file" style="height: 38px; display: inline-block;line-height: 38px;text-align: center;cursor: pointer; font-size: 14px;width: 280px;box-sizing: border-box;border: 1px solid #ccc;border-radius: 3px;text-overflow:ellipsis;overflow: hidden;white-space: nowrap;vertical-align: middle;">
+						请选择录音文件
+					</label>
+					<input type="file" id="file" name="file" style="display: none;">
+			</div>
+			<!--确定上传按钮-->
+			<div style="text-align: center;margin-top:20px">
+				<div name="确定上传" id="updateBtn_1" style="display: inline-block; padding: 5px 12px; border: 1px solid rgb(41, 103, 153); background-color: rgb(41, 103, 153); color: rgb(255, 255, 255); width: auto; font-size: 13px; margin-right: 8px; border-radius: 2px; vertical-align: top; cursor: pointer; user-select: none; margin-top: 7px;">
+					确定上传
+				</div>
+			</div>
+		</form>
+</div>
+
+
+<div id="box" style="background: rgba(0,0,0,0.2);z-index: 1301;display: none; position: absolute;top:0;left: 0;right: 0;bottom: 0;">
+  <div class="sh_home2" id="dataCon2" style="display : block;
+       z-index: 1300;border-radius: 5px;padding:10px;background-color: #fff;border: 1px solid #ccc;
+       -moz-box-shadow: 8px 10px 5px #888888; 
+       margin: 100px auto;
+       box-shadow: 8px 10px 5px #888888;height:300px">
+
+  </div>
+</div>

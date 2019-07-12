@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} <title>登记信息-查询</title>{% endblock %}
+{% block index %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h3 class="page-header"><a class="fa fa-home" href="{% url 'index' %}"> 主页</a> >> <a
+                class="fa fa-address-book-o" href="{% url 'entry' %}"> 登记信息 </a> >>查询
+        </h3>
+        <!-- 面板开始 -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">电脑信息-登记查询</h3>
+            </div>
+            <div class="panel-body">
+
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th>员工信息</th>
+                        <th>电脑型号</th>
+                        <th>硬盘组合</th>
+                        <th>内存组合</th>
+                        <th>CPU型号</th>
+                        <th>屏幕尺寸</th>
+                        <th>5G网卡</th>
+                        <th>MAC地址</th>
+                        <th>操作系统</th>
+                        <th>分配时间</th>
+                        <th>备注</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for qu in query %}
+                        <tr>
+                            <td>{{ qu.staff_name }}</td>
+                            <td>{{ qu.brands }}</td>
+                            <td>{{ qu.disks }}</td>
+                            <td>{{ qu.get_memory_display }}</td>
+                            <td>{{ qu.cpus }}</td>
+                            <td>{{ qu.get_screen_size_display }}</td>
+                            <td>{{ qu.get_fiven_etwork_display }}</td>
+                            <td>{{ qu.mac }}</td>
+                            <td>{{ qu.get_os_display }}</td>
+                            <td>{{ qu.allot_time }}</td>
+                            <td>{{ qu.tag }}</td>
+
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+
+                <!--分页 开始-->
+                <div>
+                    <nav aria-label="Page navigation" class="pull-right">
+                        <ul class="pagination">
+
+                        </ul>
+
+                    </nav>
+                </div>
+                <div class="col-md-3 col-sm-6 pull-right add-btn">
+                    <a href="{% url 'info' %}" class="btn  btn-danger pull-right fa fa-reply-all"> 返回
+                    </a>
+                </div>
+                <!--分页 结束-->
+            </div>
+        </div>
+        <!-- 面板 结束-->
+    </div>
+{% endblock %}
