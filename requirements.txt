@@ -32,7 +32,7 @@ defusedxml==0.5.0
 diff-match-patch==20121119
 dj-database-url==0.5.0
 dj-diabetes==0.3.1
-Django==2.0.5
+Django==2.2.10
 django-alipay==0.1
 django-appconf==1.0.3
 django-autoslug==1.9.4
