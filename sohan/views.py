@@ -16,18 +16,18 @@ import logging
 log = logging.getLogger('sourceDns.webdns.views')
 
 
-def email_if(x):
-    if x == 1:
+def email_if(kars):
+    if kars == 1:
         return '行政部'
-    elif x == 2:
+    elif kars == 2:
         return '产品部'
-    elif x == 3:
+    elif kars == 3:
         return '运营商业务部'
-    elif x == 4:
+    elif kars == 4:
         return '充值业务部'
-    elif x == 5:
+    elif kars == 5:
         return '财务部'
-    elif x == 6:
+    elif kars == 6:
         return '智能饮水业务部'
     else:
         return '其他'
