@@ -59,7 +59,7 @@ django-simpleui==2.0.4
 django-suit==2.0a1
 django-tinymce==2.7.0
 django-uuslug==1.1.8
-djangorestframework==3.9.0
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 DjangoUeditor==1.8.143
 docopt==0.6.2
