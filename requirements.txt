@@ -143,7 +143,7 @@ python-social-auth==0.3.6
 python3-openid==3.1.0
 pytz==2018.7
 pywin32==223
-PyYAML==5.1
+PyYAML==5.4
 pyzmq==18.0.1
 raven==6.9.0
 readme-renderer==24.0
