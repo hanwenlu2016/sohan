@@ -170,7 +170,7 @@ tzlocal==1.5.1
 unicodecsv==0.14.1
 Unidecode==1.0.23
 uritemplate==3.0.0
-urllib3==1.24.2
+urllib3==1.26.5
 vine==1.1.4
 virtualenv==16.5.0
 virtualenv-clone==0.5.3
