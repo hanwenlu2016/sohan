@@ -175,7 +175,7 @@ vine==1.1.4
 virtualenv==16.5.0
 virtualenv-clone==0.5.3
 webencodings==0.5.1
-websockets==6.0
+websockets==9.1
 Werkzeug==0.15.2
 WeRoBot==1.9.0
 whitenoise==4.0
