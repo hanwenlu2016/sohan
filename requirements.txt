@@ -142,7 +142,7 @@ python-slugify==3.0.2
 python-social-auth==0.3.6
 python3-openid==3.1.0
 pytz==2018.7
-pywin32==223
+pywin32==301
 PyYAML==5.1
 pyzmq==18.0.1
 raven==6.9.0
