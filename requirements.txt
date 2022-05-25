@@ -124,7 +124,7 @@ pycryptodome==3.6.4
 pycryptodomex==3.6.4
 pyflakes==1.6.0
 Pygments==2.3.1
-PyJWT==1.6.0
+PyJWT==2.4.0
 pylint==2.3.1
 pymongo==3.8.0
 pymssql==2.1.4
